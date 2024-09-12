@@ -240,3 +240,69 @@ deleteNoteBtn.addEventListener('click', () => {
         currentNote = null;
     }
 });
+document.getElementById('small-text-btn').addEventListener('click', () => {
+    document.getElementById('note-body-view').style.fontSize = '14px';
+});
+
+document.getElementById('normal-text-btn').addEventListener('click', () => {
+    document.getElementById('note-body-view').style.fontSize = '16px';
+});
+
+document.getElementById('large-text-btn').addEventListener('click', () => {
+    document.getElementById('note-body-view').style.fontSize = '18px';
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const noteBody = document.getElementById('note-body-view');
+    if (noteBody) {
+        noteBody.innerHTML = noteBody.innerHTML.replace(/([A-Z])/g, '<span style="font-weight: bold;">$1</span>');
+    }
+});
+
+document.getElementById('save-note-btn').addEventListener('click', function() {
+    const pdfName = document.getElementById('pdf-name-input').value;
+    const fileInput = document.getElementById('note-file-input');
+    const files = fileInput.files;
+
+    if (files.length > 0) {
+        const pdfFile = files[0]; // Assuming one file at a time for simplicity
+
+        // Handle file upload (e.g., save the file to server, etc.)
+
+        // Add the PDF attachment with the custom name
+        addPDFAttachment(pdfFile, pdfName);
+    } else {
+        alert('Please select a file to upload.');
+    }
+});
+
+function addPDFAttachment(pdfFile, customName) {
+    const pdfAttachment = document.createElement('div');
+    pdfAttachment.className = 'pdf-attachment';
+    pdfAttachment.setAttribute('data-name', customName);
+
+    const icon = document.createElement('i');
+    icon.className = 'fas fa-file-pdf';
+
+    const namePara = document.createElement('p');
+    namePara.className = 'pdf-name';
+    namePara.textContent = customName;
+
+    pdfAttachment.appendChild(icon);
+    pdfAttachment.appendChild(namePara);
+
+    document.getElementById('note-attachments').appendChild(pdfAttachment);
+};
+document.addEventListener('DOMContentLoaded', () => {
+    // Capital letters bold (previous code)
+
+    // Add event listeners for delete buttons
+    document.getElementById('note-attachments').addEventListener('click', function(event) {
+        if (event.target && event.target.classList.contains('delete-btn')) {
+            const attachment = event.target.closest('.attachment, .pdf-attachment');
+            if (attachment) {
+                attachment.remove(); // Remove the attachment
+            }
+        }
+    });
+});

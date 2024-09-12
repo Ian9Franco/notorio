@@ -1,0 +1,124 @@
+/* Default Dark Mode Styles */
+body.dark-mode {
+    background-color: #343434;
+    color: #C0C0C0;
+  }
+  .dark-mode header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #DCDCDC;
+  }
+  
+  
+  .dark-mode header h1, 
+  .dark-mode h2 {
+    color: #DCDCDC;
+  }
+  /* Dark mode styles */
+.dark-mode h3 {
+    color: #DCDCDC;
+}
+
+.dark-mode p {
+    color: #a5a5a5;
+}
+
+.dark-mode .note-item {
+    background-color: #343434;
+    color: #C0C0C0;
+}
+
+.dark-mode {
+    background-color: #343434;
+}
+
+  .dark-mode #app-container {
+    background-color: #555555;
+  }
+  
+  .dark-mode #notes-sidebar {
+    background-color: #555555;
+  }
+  
+  .dark-mode #note-content {
+    background-color: #555555;
+  }
+  
+  .dark-mode .btn {
+    background-color: #DCDCDC;
+    color: #343434;
+  }
+  
+  .dark-mode input,
+  .dark-mode textarea {
+    background-color: #555555;
+    color: #C0C0C0;
+    border: 1px solid #DCDCDC;
+  }
+  
+  .dark-mode #auth-container {
+    background-color: #555555;
+    color: #C0C0C0;
+  }
+  
+  .dark-mode #auth-container input {
+    background-color: #555555;
+    color: #C0C0C0;
+  }
+  
+  .dark-mode #note-title-view, 
+  .dark-mode #note-body-view {
+    color: #C0C0C0;
+  }
+  
+  /* Light Mode Styles */
+  body.light-mode {
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  body.light-mode header h1, 
+  body.light-mode h2 {
+    color: #333;
+  }
+  
+  body.light-mode #app-container,
+  body.light-mode #notes-sidebar,
+  body.light-mode #note-content {
+    background-color: #9c9c9c;
+  }
+  
+  body.light-mode .btn {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  body.light-mode input,
+  body.light-mode textarea {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+  }
+  
+  body.light-mode #note-title-view, 
+  body.light-mode #note-body-view {
+    color: #333;
+  }
+/* Style for theme toggle button */
+.theme-toggle {
+    cursor: pointer;
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.theme-toggle i {
+    transition: color 0.3s ease;
+}
+/* Optional style for the modal buttons */
+.modal-content .btn i {
+    font-size: 18px;
+    margin: 0 5px;
+}

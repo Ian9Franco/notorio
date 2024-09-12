@@ -149,6 +149,119 @@ h1, h2 {
   margin-bottom: 10px;
 }
 
+/* Image grid layout */
+#note-attachments {
+  display: flex; /* You can also use 'grid' if preferred */
+  flex-wrap: wrap;
+  gap: 10px; /* Adjusts the space between images */
+}
+
+#note-attachments img {
+  width: 225px;  /* Fixed width */
+  height: 180px; /* Fixed height */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 10px 0; /* Margin for better spacing around images */
+}
+#note-attachments img:hover {
+  transform: translateY(5px); /* Image sinks slightly on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Increase shadow for the 3D effect */
+}
+
+/* Style for PDFs */
+#note-attachments .pdf-attachment {
+  display: inline-block;
+  width: 150px;
+  padding: 15px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  color: #333;
+  text-decoration: none; /* Remove underline */
+}
+
+#note-attachments .pdf-attachment i {
+  font-size: 30px; /* Larger PDF icon */
+  color: #d9534f; /* PDF icon color */
+}
+
+#note-attachments .pdf-attachment:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Hover effect for PDFs */
+}
+
+#note-attachments .pdf-attachment p {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333; /* Ensure text color is correct */
+}
+
+.pdf-attachment {
+  /* Additional styles if needed */
+}
+
+
+
+#note-body-view, #note-body-input {
+  font-family: 'Georgia', serif; /* Classic, readable font */
+  font-size: 16px; /* Default size */
+  line-height: 1.6; /* Good line spacing for readability */
+  text-align: justify; /* Ensure paragraph text is justified */
+  padding: 30px; /* Padding for better spacing */
+}
+
+#note-body-view p {
+  text-indent: 25px; /* Paragraph indentation */
+  margin-bottom: 15px; /* Spacing between paragraphs */
+}
+
+#note-body-view strong, #note-body-view h1, #note-body-view h2 {
+  font-size: 18px; /* Slightly bigger size for bold text */
+  font-weight: bold;
+}
+
+/* Slightly larger font size for capitalized words */
+#note-body-view .capitalized {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+#note-text-controls {
+  margin: 10px 0;
+}
+#note-body-view::first-letter {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+#note-text-controls .btn {
+  margin-right: 5px;
+  padding: 5px 10px;
+}
+
+.delete-btn {
+  background-color: #d9534f; /* Red background for delete */
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  position: absolute; /* Positioning inside the attachment container */
+  top: 5px;
+  right: 5px;
+}
+
+.attachment, .pdf-attachment {
+  position: relative; /* Ensure delete button is positioned relative to attachment */
+  display: inline-block;
+  margin: 10px;
+}
+
+
 @media (max-width: 768px) {
   #app-container {
       flex-direction: column;
