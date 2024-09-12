@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notebook App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>My Notebook</h1>
+            <div id="user-info" class="hidden">
+                <span id="user-username"></span>
+                <button id="edit-username-btn" class="btn">Edit Username</button>
+                <button id="logout-btn" class="btn">Logout</button>
+            </div>
+        </header>
+
+        <div id="auth-container">
+            <h2>Login or Sign Up</h2>
+            <form id="auth-form">
+                <input type="email" id="auth-email" placeholder="Email" required>
+                <input type="password" id="auth-password" placeholder="Password" required>
+                <input type="text" id="auth-username" placeholder="Username (for signup)" required>
+                <button type="submit" id="login-btn" class="btn">Login</button>
+                <button type="button" id="signup-btn" class="btn">Sign Up</button>
+            </form>
+        </div>
+
+        <div id="app-container" class="hidden">
+            <div id="notes-sidebar">
+                <h2>Notes</h2>
+                <button id="add-note-btn" class="btn">Add Note</button>
+                <div id="notes-list"></div>
+            </div>
+            <div id="note-content">
+                <div id="note-view" class="hidden">
+                    <h2 id="note-title-view"></h2>
+                    <p id="note-body-view"></p>
+                    <div id="note-attachments"></div>
+                    <button id="edit-note-btn" class="btn">Edit</button>
+                    <button id="delete-note-btn" class="btn">Delete</button>
+                </div>
+                <div id="note-edit">
+                    <input type="text" id="note-title-input" placeholder="Note Title" required>
+                    <textarea id="note-body-input" placeholder="Note Content" required></textarea>
+                    <input type="color" id="note-color-input" value="#ffffff">
+                    <input type="file" id="note-file-input" accept=".jpg,.jpeg,.png,.pdf" multiple>
+                    <button id="save-note-btn" class="btn">Save Note</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="edit-username-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Edit Username</h2>
+            <input type="text" id="new-username-input" placeholder="New Username">
+            <button id="save-username-btn" class="btn">Save Username</button>
+            <button id="close-modal-btn" class="btn">Close</button>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
